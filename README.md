@@ -1,7 +1,7 @@
 # Tumblr-Spider
 
-1.在config.py文件中设置Soket5代理(梯子)  
-2.在config.py文件中设置Cookie（在浏览器中登陆tumblr，查看Cookie）   
+1.在`config.py`文件中设置Soket5代理(梯子)  
+2.在`config.py`文件中设置Cookie（在浏览器中登陆tumblr，查看Cookie）   
 3.默认在当前文件夹下生成images文件夹，存储图片，并过滤掉重复图片
 
 ```
