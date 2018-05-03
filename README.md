@@ -4,7 +4,7 @@
 2.在 `config.py` 文件中设置Cookie（在浏览器中登陆tumblr，查看Cookie）   
 3.默认在当前文件夹下生成images文件夹，存储图片，并过滤掉重复图片
 
-```
+```Python
 #请求代理
 PROXIES = {
     'http': 'socks5://127.0.0.1:1086',
