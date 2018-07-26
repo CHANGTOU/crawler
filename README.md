@@ -18,3 +18,7 @@ HEADERS = {
 #请求页数范围（0....n)
 PAGE_RANG = range(0, 100)
 ```
+
+如图
+![控制台输出](https://github.com/yichahucha/tumblr_spider/blob/master/83F7D630-5733-4EA8-8C75-5B7BE3643D75.png?raw=true)
+
