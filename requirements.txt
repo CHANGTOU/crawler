@@ -1,0 +1,4 @@
+lxml==4.2.3
+requests==2.19.1
+beautifulsoup4==4.6.0
+pysocks==1.6.8
