@@ -25,8 +25,8 @@ def download_image(url):
             save_image(respones.content ,url)
         else:
             print('图片下载失败')
-    except requests.exceptions.ConnectionError:
-        print('图片下载失败')
+    except requests.exceptions.ConnectionError as error:
+        print('图片失败：' + str(error))
 
 #获取筛选数据
 def get_home(page):
@@ -34,22 +34,23 @@ def get_home(page):
     try:
         r = requests.get(url, headers = HEADERS ,proxies=PROXIES)
         if r.status_code == 200:
-            soup = BeautifulSoup(r.text ,'lxml')
-            photo = soup.select('.post_media_photo')
-            photoUrl = [item['src'] for item in photo]
-            photoSet = soup.select('.photoset_photo')
-            photoSetUrl = [item['href'] for item in photoSet] 
-            
-            print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '正在下载第{}页'.format(page))
-            
-            for imgUrl in photoSetUrl+photoUrl:
-                #多线程下载图片
-                t = threading.Thread(target=download_image, args=(imgUrl,))
-                t.start()
+            try:
+                soup = BeautifulSoup(r.text ,'lxml')
+                photo = soup.select('.post_media_photo')
+                photoUrl = [item['src'] for item in photo]
+                photoSet = soup.select('.photoset_photo')
+                photoSetUrl = [item['href'] for item in photoSet]
+                print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '正在下载第{}页'.format(page))
+                for imgUrl in photoSetUrl+photoUrl:
+                    #多线程下载图片
+                    t = threading.Thread(target=download_image, args=(imgUrl,))
+                    t.start()
+            except BaseException as e:
+                print('解析错误：' + str(e))
         else:
             print('列表请求失败')
-    except requests.exceptions.ConnectionError:
-        print('列表请求失败')
+    except requests.exceptions.ConnectionError as error:
+        print('列表失败：' + str(error))
 
 def start(page):
     print('开始--------->>')
@@ -65,6 +66,7 @@ def start(page):
     p.join()
     end_time = time.time()
     end_file_count = len([x for x in os.listdir(DIR_PATH)])
+
     print('结束--------->>','耗时{}s'.format(int(end_time - start_time)),'保存{}个'.format(end_file_count-start_file_count),'总共{}个'.format(end_file_count))
 
 if __name__ == '__main__':
