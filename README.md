@@ -28,3 +28,4 @@ PROXIES = {
 如图
 ![爬取结果](https://github.com/yichahucha/tumblr_spider/blob/master/WX20181214-132916@2x.png?raw=true)
 
+真他妈好用
