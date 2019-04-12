@@ -5,8 +5,8 @@
 3.默认在当前文件夹下生成images文件夹，存储图片，并过滤掉重复图片
 
 ```Python
-#爬取页数范围（0....n)
-PAGE_RANG = range(0, 100)
+#爬取页数
+PAGE_RANG = 10
 
 #设置请求头信息，更换自己的Cookie
 HEADERS = {
