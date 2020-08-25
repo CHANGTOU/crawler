@@ -1,4 +1,4 @@
-# tumblr
+# Tumblr
 
 1.在 `config.py` 文件中设置代理  
 2.在 `config.py` 文件中设置 Cookie（在浏览器中登陆 tumblr，查看 Cookie ）     
