@@ -1,8 +1,8 @@
-# Tumblr
+# Tumblr crawler
 
-1.在 `config.py` 文件中设置代理  
-2.在 `config.py` 文件中设置 Cookie（在浏览器中登陆 tumblr，查看 Cookie ）     
-3.默认在当前文件夹下生成 images 文件夹，存储图片，并过滤掉重复图片
+1. 在 `config.py` 文件中设置代理  
+2. 在 `config.py` 文件中设置 Cookie（在浏览器中登陆 tumblr，查看 Cookie ）     
+3. 默认在当前文件夹下生成 images 文件夹，存储图片，并过滤掉重复图片
 
 ```Python
 # 页数
@@ -24,5 +24,4 @@ PROXIES = {
 }
 ```
 
-如图
-![爬取结果](https://github.com/yichahucha/tumblr_spider/blob/master/WX20181214-132916@2x.png?raw=true)
+![结果](https://github.com/yichahucha/tumblr_spider/blob/master/WX20181214-132916@2x.png?raw=true)
